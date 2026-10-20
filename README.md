@@ -13,9 +13,9 @@ go run .
 
 `ATRIUM_SETUP_SECRET` is required. Set `ATRIUM_DATA_DIR` to persist connection
 secrets and config across restarts. The hosted container mounts its per-app EFS
-access point there. Set `ATRIUM_FRAME_ANCESTORS` to the COHO origin allowed to
-embed `/ui`, and set `ATRIUM_PARENT_ORIGIN` to that exact origin for the close
-message (for example `http://localhost:4200` in local development).
+access point there. Bake one-image COHO `frame-ancestors` wildcards by default (`*.coho.management` etc.).
+Optional `ATRIUM_FRAME_ANCESTORS` is unioned. Set `ATRIUM_PARENT_ORIGIN` to the exact
+Store origin for close postMessage (deploy-inject per env) (for example `http://localhost:4200` in local development).
 
 ## Endpoints
 
